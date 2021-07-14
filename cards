@@ -1,0 +1,39 @@
+import java.util.*;
+public class task2 {
+    public static void main(String[] args){
+        Integer[] deck = new Integer[52];
+        for(int i=0;i<52;i++){
+            deck[i]=i;
+        }
+        int h1=0;
+        int h2=0;
+        List<Integer> tempL = Arrays.asList(deck);
+        System.out.println("Shuffling...");
+        Collections.shuffle(tempL);
+        tempL.toArray(deck);
+        for(int i=0; i<4;i++){
+            h1=deck[i]/13;
+            h2=deck[i]%13;
+            h2++;
+            if(h2==1)
+                System.out.print("Ace of ");
+            else if(h2<=10)
+                System.out.print(h2 + " of ");
+            else if(h2==11)
+                System.out.print("Jack of ");
+            else if(h2==12)
+                System.out.print("Queen of ");
+            else
+                System.out.print("King of ");
+            if(h1==0)
+                System.out.println("Spades!");
+            else if(h1==1)
+                    System.out.println("Hearts!");
+            else if(h1==2)
+                System.out.println("Diamonds!");
+            else
+                System.out.println("Clubs!");
+        }
+
+    }
+}
